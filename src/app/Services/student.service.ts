@@ -9,8 +9,7 @@ export class StudentService {
   constructor(private httpClient: HttpClient) { }
 
   // funcao para salvar
-  saveStudent(inputData: object){
-    
+  save(inputData: object){
     return this.httpClient.post('http://localhost:8000/api/students',inputData);
   }
 }

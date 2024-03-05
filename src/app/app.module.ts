@@ -11,6 +11,10 @@ import { ContactPageComponent } from './Pages/contact-page/contact-page.componen
 import { NavbarComponent } from './Pages/Partials/navbar/navbar.component';
 import { StudentCreateComponent } from './Pages/student-create/student-create.component';
 import { UserCreateComponent } from './Pages/user-create/user-create.component';
+import { LoaderComponent } from './Pages/Partials/loader/loader.component';
+import { StudentPageComponent } from './Pages/student-page/student-page.component';
+import { UserPageComponent } from './Pages/user-page/user-page.component';
+import { UserEditComponent } from './Pages/user-edit/user-edit.component';
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import { UserCreateComponent } from './Pages/user-create/user-create.component';
     ContactPageComponent,
     NavbarComponent,
     StudentCreateComponent,
-    UserCreateComponent
+    UserCreateComponent,
+    LoaderComponent,
+    StudentPageComponent,
+    UserPageComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,

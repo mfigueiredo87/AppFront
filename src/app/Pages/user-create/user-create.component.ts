@@ -15,9 +15,16 @@ export class UserCreateComponent {
   email!: string
   password!: string
 
+  // funcoes adicionais para o componente de animacao
+  isLoading: boolean = false;
+  loadingTitle: string = ''
+  errors: any=[];
    // funcao para salvar
 
    saveUser(){
+
+    this.isLoading = true
+    this.loadingTitle = 'Saving'
     var inputData = {
       name:this.name,
       email: this.email,
@@ -28,9 +35,17 @@ export class UserCreateComponent {
  this.userService.saveUser(inputData).subscribe({
   next: (res:any)=>{
     console.log(res, 'response')
+
+    alert(res.message);
+    this.name = '';
+    this.email = '';
+    this.password ='';
+    this.isLoading = false
   },
   error: (err: any) =>{
-    console.log(err, 'errors')
+    this.errors = err.error.errors;
+    this.isLoading = false
+    console.log(err.error.errors, 'errors')
   }
 })
 }
